@@ -3,5 +3,6 @@ A collection for my Advent of Code (www.adventofcode.com) solutions using Nim, J
 
 |   | Julia | Nim | Python |
 | --- | --- | --- | --- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Day 1 | Content Cell | Content Cell | Content Cell |
+| Day 2 | Content Cell | Content Cell | Content Cell |
+| Day 3 | Content Cell | Content Cell | Content Cell |
