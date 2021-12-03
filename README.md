@@ -1,5 +1,5 @@
 # AdventOfCode2021
-A collection for my Advent of Code (www.adventofcode.com) solutions using Nim, Julia, and Python programming languages
+A collection for my Advent of Code (www.adventofcode.com) solutions using Nim, Julia, and Python programming languages. The way each puzzle is solved is the same. These are different translations of that same solve path.
 
 | Nim | Julia | Python |
 | --- | ----- | ------ |
