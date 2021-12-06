@@ -9,13 +9,13 @@ numFish = length(fish)
 
 # Count initial number of fish with days until they give birth
 for f in fish
-	fishCount[f] += 1
+  fishCount[f] += 1
 end
 
 for day in 1:numDays
   for f in 8:-1:0
-  	# When fish gives birth, reset mother's timer, 
-  	# declare baby's time and increase count of number of fish by one 
+    # When fish gives birth, reset mother's timer, 
+    # declare baby's time and increase count of number of fish by one 
     if f == 0
       newFishCount[6] = fishCount[f] + fishCount[7]
       newFishCount[8] = fishCount[f]
