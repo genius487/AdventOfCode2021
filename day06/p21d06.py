@@ -12,12 +12,12 @@ numFish = len(fish)
 
 # Count initial number of fish with days until they give birth
 for f in fish:
-	fishCount[f] += 1
+  fishCount[f] += 1
 
 for day in range(1,numDays+1):
   for f in range(8,-1,-1):
-  	# When fish gives birth, reset mother's timer, 
-  	# declare baby's time and increase count of number of fish by one 
+    # When fish gives birth, reset mother's timer, 
+    # declare baby's time and increase count of number of fish by one 
     if f == 0:
       newFishCount[6] = fishCount[f] + fishCount[7]
       newFishCount[8] = fishCount[f]
@@ -35,5 +35,3 @@ for day in range(1,numDays+1):
 parts[1] = numFish
 
 print(parts)
-
- 
