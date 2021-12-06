@@ -16,7 +16,6 @@ for time in file:
 # Count initial number of fish with days until they give birth
 fishCount = fish.toCountTable()
 
-
 for day in 1..numDays:
   for f in countdown(8,0):
 
@@ -39,5 +38,3 @@ for day in 1..numDays:
 parts[1] = numFish
 
 echo parts
-
- 
