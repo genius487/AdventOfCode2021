@@ -1,4 +1,4 @@
-import strutils, sequtils, times
+import strutils, sequtils
 
 var
   file = readFile("21day09.txt").strip().splitLines()
@@ -9,7 +9,6 @@ var
   found: bool
   setOfRegions: seq[seq[int]]
   largestBasins = newSeq[int](3)
-  tt = cpuTime()
 
 proc findAdjacents(point: seq[int], iMax: int, jMax: int): seq[seq[int]] =
   var
@@ -35,23 +34,22 @@ for i, line in file:
 
 for i, line in heights:
   for j, l in line:
-
-    ## Part 1 ##
-
-    position = @[i,j]
-    adjacents = @[]
-    
-    for point in findAdjacents(position, heights.high, line.high):
-      adjacents.add(heights[point[0]][point[1]])
-
-    if l < min(adjacents): 
-      parts[0] += 1 + l ## Part 1 ##
-
-    ## Part 2 ##
-
-    intPosition = i*2*line.len + j
-
     if l < 9:
+
+      ## Part 1 ##
+
+      position = @[i,j]
+      adjacents = @[]
+      
+      for point in findAdjacents(position, heights.high, line.high):
+        adjacents.add(heights[point[0]][point[1]])
+
+      if l < min(adjacents): 
+        parts[0] += 1 + l ## Part 1 ##
+
+      ## Part 2 ##
+
+      intPosition = i*2*line.len + j
       setsAddedTo = @[]
 
       if setOfRegions == []:
@@ -95,4 +93,3 @@ for l in largestBasins:
   parts[1] *= l
 
 echo parts
-echo cpuTime()-tt
