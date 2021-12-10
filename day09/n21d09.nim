@@ -1,4 +1,4 @@
-import strutils, sequtils
+import strutils, sequtils, times
 
 var
   file = readFile("21day09.txt").strip().splitLines()
@@ -9,6 +9,7 @@ var
   found: bool
   setOfRegions: seq[seq[int]]
   largestBasins = newSeq[int](3)
+  tt = cpuTime()
 
 proc findAdjacents(point: seq[int], iMax: int, jMax: int): seq[seq[int]] =
   var
@@ -58,18 +59,22 @@ for i, line in heights:
       else:
         found = false
         for s in 0..setOfRegions.high:
-          block findNeighbour:
-            for i in 0..setOfRegions[s].high:
-              if intPosition-setOfRegions[s][i] in [-1, 1, -2*line.len, 2*line.len]:
-                found = true
-                setOfRegions[s].add(intPosition)
-                setsAddedTo.add(s)
-                break findNeighbour
+          if intPosition-max(setOfRegions[s]) <= 2*line.len:
+
+            block findNeighbour:
+              for i in 0..setOfRegions[s].high:
+                if intPosition-setOfRegions[s][i] in [1, 2*line.len]:
+                  found = true
+                  setOfRegions[s].add(intPosition)
+                  setsAddedTo.add(s)
+                  break findNeighbour
+
         if setsAddedTo.deduplicate.len > 1:
           joinedSet = setOfRegions[setsAddedTo[0]] & setOfRegions[setsAddedTo[1]]
           setOfRegions.del(setsAddedTo[1])
           setOfRegions.del(setsAddedTo[0])
           setOfRegions.add(joinedSet)
+
         if not found:
           setOfRegions.add(@[intPosition])
 
@@ -86,9 +91,8 @@ for g, group in setOfRegions:
   elif setOfRegions[g].len > largestBasins[2]:
     largestBasins[2] = setOfRegions[g].len
 
-echo setOfRegions.len, largestBasins
-
 for l in largestBasins:
   parts[1] *= l
 
 echo parts
+echo cpuTime()-tt
