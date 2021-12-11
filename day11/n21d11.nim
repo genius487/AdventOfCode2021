@@ -2,7 +2,7 @@ import strutils, sequtils
 
 var
   file = readFile("21day11.txt").strip().splitLines()
-  parts = [0,1]
+  parts = [0,0]
   octopuses = newSeqWith(file.len, newSeq[int](file[0].len))
   steps: int
   flashedOctopuses, potentialFlash, newPotentialFlash: seq[seq[int]]
@@ -66,4 +66,3 @@ while not isSimultaneousFlash:
 
 
 echo parts
-
