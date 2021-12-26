@@ -16,4 +16,5 @@ A collection for my Advent of Code (www.adventofcode.com) solutions using Nim, J
 | [Day 11](https://github.com/genius487/AdventOfCode2021/blob/main/day11/n21d11.nim) | [Day 11](https://github.com/genius487/AdventOfCode2021/blob/main/day11/j21d11.jl) | [Day 11](https://github.com/genius487/AdventOfCode2021/blob/main/day11/p21d11.py) |
 | [Day 12](https://github.com/genius487/AdventOfCode2021/blob/main/day12/n21d12.nim) | 
 | [Day 13](https://github.com/genius487/AdventOfCode2021/blob/main/day13/n21d13.nim) | 
+| [Day 14](https://github.com/genius487/AdventOfCode2021/blob/main/day14/n21d14.nim) | 
 | [Day 20](https://github.com/genius487/AdventOfCode2021/blob/main/day20/n21d20.nim) | 
